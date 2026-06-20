@@ -4,73 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SETR — AI Appointment Setting for Insurance Agents</title>
-<meta name="description" content="SETR is an AI-powered appointment-setting platform for insurance agents. Sign up to receive product information, demo scheduling, and follow-up communications.">
+<meta name="description" content="SETR is an AI-powered appointment-setting platform for insurance agents and agency teams. Chat with us to get started.">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
-  :root{
-    --bg:#0a0a0a;--card:#131313;--field:#1c1c1c;--field-border:#2a2a2a;
-    --accent:#a3e635;--text:#f4f4f4;--muted:#8a8a8a;--faint:#5a5a5a;
-  }
+  :root{--bg:#0a0a0a;--card:#131313;--field-border:#2a2a2a;--accent:#a3e635;--text:#f4f4f4;--muted:#8a8a8a;--faint:#5a5a5a}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);font-family:'Inter',sans-serif;color:var(--text);line-height:1.6}
+  body{background:var(--bg);font-family:'Inter',sans-serif;color:var(--text);line-height:1.7}
   a{color:var(--accent)}
   .wrap{max-width:680px;margin:0 auto;padding:0 20px}
-
   header{border-bottom:1px solid #1e1e1e}
-  .nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;max-width:680px;margin:0 auto;padding-left:20px;padding-right:20px}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:22px 20px;max-width:680px;margin:0 auto}
   .brand{font-family:'Oswald',sans-serif;font-weight:700;font-size:24px;letter-spacing:.5px;color:var(--accent);text-transform:lowercase}
-  .nav a.help{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none}
-
+  .nav a{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none}
   .hero{padding:54px 0 10px}
   .eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:16px}
   h1{font-family:'Oswald',sans-serif;font-weight:700;font-size:46px;line-height:1.08;letter-spacing:-.5px;margin-bottom:18px}
   .subhead{font-size:16px;color:var(--muted);max-width:540px}
-
-  .card{background:var(--card);border:1px solid #1e1e1e;border-radius:16px;padding:36px 40px;margin:36px 0}
-  .row{display:flex;gap:16px}
-  .row .field{flex:1}
-  .field{margin-bottom:20px}
-  label{display:block;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:9px}
-  input{width:100%;background:var(--field);border:1px solid var(--field-border);border-radius:8px;padding:14px 16px;color:var(--text);font-size:15px;font-family:'Inter',sans-serif}
-  input::placeholder{color:var(--faint)}
-  input:focus{outline:none;border-color:var(--accent)}
-
-  .consent{border:1px solid var(--field-border);border-radius:10px;padding:18px 20px;display:flex;gap:14px;margin:6px 0 26px}
-  .consent input[type=checkbox]{appearance:none;width:18px;height:18px;min-width:18px;margin-top:2px;border:1px solid #3a3a3a;border-radius:4px;background:#fff;cursor:pointer;position:relative}
-  .consent input[type=checkbox]:checked{background:var(--accent);border-color:var(--accent)}
-  .consent input[type=checkbox]:checked::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #0a0a0a;border-width:0 2px 2px 0;transform:rotate(45deg)}
-  .consent-text{font-size:12px;line-height:1.7;color:var(--muted)}
-  .consent-text strong{color:var(--text);font-weight:700}
-  .tag{display:inline-block;background:var(--accent);color:#0a0a0a;font-size:10px;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:4px;margin-right:6px;text-transform:uppercase}
-
-  .cta{width:100%;background:var(--accent);color:#0a0a0a;border:none;border-radius:10px;padding:18px;font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:background .15s}
-  .cta:hover{background:#b6f04a}
-  .footnote{text-align:center;font-size:12px;color:var(--faint);margin-top:16px}
-  .footnote a{color:var(--faint)}
-
-  .info{padding:8px 0 40px}
-  .info h2{font-family:'Oswald',sans-serif;font-size:22px;margin-bottom:12px}
+  .info{padding:24px 0 20px}
+  .info h2{font-family:'Oswald',sans-serif;font-size:22px;margin:24px 0 12px}
   .info p{color:var(--muted);font-size:15px;margin-bottom:14px}
   .info ul{color:var(--muted);font-size:15px;margin:0 0 14px 20px}
   .info li{margin-bottom:6px}
-
-  footer{border-top:1px solid #1e1e1e;padding:28px 0;text-align:center}
+  .start{background:var(--card);border:1px solid #1e1e1e;border-radius:16px;padding:30px 34px;margin:20px 0}
+  .start h2{font-family:'Oswald',sans-serif;font-size:22px;margin-bottom:10px}
+  .start p{color:var(--muted);font-size:15px}
+  .consent{border:1px solid var(--field-border);border-radius:10px;padding:18px 20px;margin:22px 0 8px}
+  .consent-text{font-size:12px;line-height:1.7;color:var(--muted)}
+  .consent-text strong{color:var(--text);font-weight:700}
+  footer{border-top:1px solid #1e1e1e;padding:28px 0;text-align:center;margin-top:30px}
   footer .brand{font-size:18px;margin-bottom:10px}
   footer .links a{color:var(--muted);font-size:13px;text-decoration:none;margin:0 10px}
   footer .copy{color:var(--faint);font-size:12px;margin-top:12px}
-
-  @media(max-width:520px){
-    .card{padding:28px 22px}
-    h1{font-size:34px}
-    .row{flex-direction:column;gap:0}
-  }
+  @media(max-width:520px){h1{font-size:34px}.start{padding:24px 22px}}
 </style>
 </head>
 <body>
   <header>
     <div class="nav">
       <span class="brand">setr</span>
-      <a class="help" href="mailto:support@setrpro.io">support@setrpro.io</a>
+      <a href="mailto:support@setrpro.io">support@setrpro.io</a>
     </div>
   </header>
 
@@ -81,56 +53,28 @@
       <p class="subhead">SETR books qualified appointments for individual agents and agency teams — automated outreach, follow-up, and scheduling, done for you.</p>
     </section>
 
-    <section class="card" id="signup">
-      <div class="row">
-        <div class="field">
-          <label for="first">First Name</label>
-          <input type="text" id="first" name="first" placeholder="Marcus" autocomplete="given-name">
-        </div>
-        <div class="field">
-          <label for="last">Last Name</label>
-          <input type="text" id="last" name="last" placeholder="Thompson" autocomplete="family-name">
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="you@agency.com" autocomplete="email">
-      </div>
-
-      <div class="field">
-        <label for="phone">Mobile Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="(904) 555-0100" autocomplete="tel">
-      </div>
-
-      <div class="consent">
-        <input type="checkbox" id="consent" name="consent">
-        <label for="consent" class="consent-text">
-          <span class="tag">Optional</span>I consent to receive SMS messages from <strong>SETR LLC</strong> regarding the SETR platform, including product information, demo scheduling, and follow-up communications. Message &amp; data rates may apply. Message frequency varies. Reply <strong>STOP</strong> to cancel. Reply <strong>HELP</strong> for help. <strong>This consent is not required as a condition of receiving any service or making a purchase.</strong>
-        </label>
-      </div>
-
-      <button class="cta" type="button">Get Started &nbsp;&rarr;</button>
-
-      <p class="footnote">
-        No credit card required · No spam, ever.<br>
-        By submitting, you agree to our <a href="terms.html">Terms &amp; Conditions</a> and <a href="privacy.html">Privacy Policy</a>.
-      </p>
+    <section class="info">
+      <h2>How it works</h2>
+      <p>SETR contacts your leads, qualifies them, handles follow-up, and schedules appointments directly onto your calendar — so you spend your time closing instead of chasing.</p>
+      <h2>What's included</h2>
+      <ul>
+        <li>Automated lead outreach and qualification.</li>
+        <li>Multi-touch follow-up sequences.</li>
+        <li>Calendar booking and confirmations.</li>
+        <li>Live performance visibility.</li>
+        <li>Compliant messaging with opt-out handling built in.</li>
+      </ul>
     </section>
 
-    <section class="info">
-      <h2>About SETR</h2>
-      <p>SETR is an AI-powered appointment-setting platform built for insurance agents and agency teams. The platform contacts your leads, qualifies them, handles follow-up, and schedules appointments directly onto your calendar.</p>
-      <h2 style="margin-top:24px">Messaging &amp; consent</h2>
-      <p>By submitting the form above and checking the consent box, you agree to receive SMS messages from SETR LLC related to the SETR platform — including product information, demo scheduling, and follow-up communications.</p>
-      <ul>
-        <li>Message frequency varies.</li>
-        <li>Message and data rates may apply.</li>
-        <li>Reply <strong>STOP</strong> at any time to opt out.</li>
-        <li>Reply <strong>HELP</strong> for assistance, or email support@setrpro.io.</li>
-        <li>Consent is not a condition of purchase.</li>
-      </ul>
-      <p>For details on how we handle your information, see our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms &amp; Conditions</a>.</p>
+    <section class="start">
+      <h2>Start with SETR</h2>
+      <p>Use the chat in the corner to get started. Share your name and mobile number in the chat and our team will reach out to set you up.</p>
+
+      <div class="consent">
+        <p class="consent-text">
+          By providing your mobile number through our chat, you consent to receive SMS messages from <strong>SETR LLC</strong> regarding the SETR platform, including product information, demo scheduling, and follow-up communications. Message &amp; data rates may apply. Message frequency varies. Reply <strong>STOP</strong> to cancel. Reply <strong>HELP</strong> for help. Consent is not a condition of any purchase. See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms &amp; Conditions</a>.
+        </p>
+      </div>
     </section>
   </main>
 
@@ -145,5 +89,7 @@
       <div class="copy">© 2026 SETR LLC · All rights reserved.</div>
     </div>
   </footer>
+
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a36e3f5acd135ae796d2f1c" data-source="WEB_USER"></script>
 </body>
 </html>
